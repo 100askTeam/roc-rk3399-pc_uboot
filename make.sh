@@ -31,7 +31,10 @@ OBJ_ARM64=aarch64-linux-gnu-objdump
 GCC_ARM32=arm-linux-gnueabihf-
 GCC_ARM64=aarch64-linux-gnu-
 TOOLCHAIN_ARM32=../prebuilts/gcc/linux-x86/arm/gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf/bin
-TOOLCHAIN_ARM64=$HOST_DIR/bin
+AARCHGUN=(`which aarch64-linux-gnu-gcc-6.3.1`)
+TOOLCHAIN_ARM64=${AARCHGUN/aarch64-linux-gnu-gcc-6.3.1}
+echo $TOOLCHAIN_ARM64
+#TOOLCHAIN_ARM64=$HOST_DIR/bin
 
 ########################################### User not touch #############################################
 # Declare global INI file searching index name for every chip, update in select_chip_info()
